@@ -1,37 +1,44 @@
-{pkgs, lib, ...}:
+{ pkgs, lib, ... }:
 
 {
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
-    
+
     config = rec {
       modifier = "Mod4";
 
-      window.border = 0;
+      window.border = 1;
 
       gaps = {
         inner = 10;
-	outer = 5;
+        outer = 0;
       };
 
       keybindings = lib.mkOptionDefault {
-	"${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-	"${modifier}+Shift+b" = "exec ${pkgs.firefox}/bin/firefox --new-windows";
-	"${modifier}+Shift+f" = "exec ${pkgs.xfce.thunar}/bin/thunar";
+        "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+        "${modifier}+Shift+b" =
+          "exec ${pkgs.firefox}/bin/firefox --new-windows";
+        "${modifier}+Shift+f" = "exec ${pkgs.xfce.thunar}/bin/thunar";
       };
 
       startup = [
-	{ 
-	  command = "exec i3-msg workspace 1";
-	  always = true;
-	  notification = false;
-	}
-	{ 
-	  command = "${pkgs.feh}/bin/feh --bg-scale $HOME/Downloads/malenia.jpg";
-	  always = true;
-	  notification = false;
-	}
+        {
+          command = "exec xrandr --output Virtual-1 --mode 1920x1080";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "exec i3-msg workspace 1";
+          always = true;
+          notification = false;
+        }
+        {
+          command =
+            "${pkgs.feh}/bin/feh --bg-scale $HOME/Downloads/purple-anime.jpg";
+          always = true;
+          notification = false;
+        }
       ];
     };
   };

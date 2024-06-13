@@ -1,9 +1,7 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
-  imports = [
-    ./i3.nix
-  ];
-  
+  imports = [ ./i3.nix ./alacritty.nix ];
+
   xsession.enable = true;
 }

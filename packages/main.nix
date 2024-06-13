@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 with pkgs;
 
@@ -10,9 +10,15 @@ with pkgs;
     lazygit
     curl
     neofetch
+    zip
+    unzip
 
     firefox
     thunderbird
     xfce.thunar
-  ];	
+
+    # Text editors
+    neovim
+    helix
+  ];
 }
