@@ -41,6 +41,16 @@
     }];
   };
 
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "alanpeabody";
+      plugins = [ "git" "npm" "history" "node" "rust" "deno" ];
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

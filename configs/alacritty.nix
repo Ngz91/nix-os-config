@@ -20,9 +20,7 @@
         size = 10.0;
       };
 
-      # background_opacity = 0.3;
-
-      # shell = { program = "${pkgs.zsh}/bin/zsh"; };
+      shell = { program = "${pkgs.zsh}/bin/zsh"; };
 
       colors = {
         primary = {
