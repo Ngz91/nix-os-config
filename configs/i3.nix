@@ -20,6 +20,8 @@
         "${modifier}+Shift+b" =
           "exec ${pkgs.firefox}/bin/firefox --new-windows";
         "${modifier}+Shift+f" = "exec ${pkgs.xfce.thunar}/bin/thunar";
+        "${modifier}+Shift+v" =
+          "exec ${pkgs.alacritty}/bin/alacritty -e ranger";
       };
 
       startup = [

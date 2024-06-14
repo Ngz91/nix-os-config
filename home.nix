@@ -34,11 +34,17 @@
         select = "underline";
       };
     };
-    languages.language = [{
-      name = "nix";
-      auto-format = true;
-      formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
-    }];
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+      }
+      {
+        name = "go";
+        auto-format = true;
+      }
+    ];
   };
 
   programs.zsh = {
